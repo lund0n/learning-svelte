@@ -11,7 +11,7 @@ the versions that I used to create and work through the exercises:
 - npm 6.10.2
 - git 2.22.0
 
-I imagine that unless you have a really old version of these tools you will most likely not have any problems running these exercises. But, if you do, that is the first play I would look.
+I imagine that unless you have a really old version of these tools you will most likely not have any problems running these exercises. But, if you do, that is the first place I would look.
 
 Once you've ensured that you have Node.js, npm, and git available, run the following commands:
 
