@@ -1,0 +1,68 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+    "@babel/preset-env": "^7.5.5",
+    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/svelte": "^1.7.1",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "fs-extra": "^8.1.0",
+    "globby": "^10.0.1",
+    "jest": "^24.8.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "prettier-plugin-svelte": "^0.7.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.19.3",
+    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-livereload": "^1.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.1.0",
+    "rollup-plugin-terser": "^5.1.1",
+    "svelte": "^3.7.1",
+    "svelte-test": "^0.4.0"
+  },
+  "dependencies": {
+    "dimport": "^1.0.0",
+    "navaid": "^1.0.5",
+    "sirv-cli": "^0.4.4",
+    "title-case": "^2.1.1"
+  },
+  "scripts": {
+    "setup": "node ./scripts/setup.js",
+    "clean": "rimraf public/assets",
+    "lint": "eslint src",
+    "prebuild": "npm run clean",
+    "build": "rollup -c",
+    "autobuild": "rollup -c -w",
+    "dev": "npm-run-all clean --parallel start:dev autobuild",
+    "start": "sirv public --single",
+    "start:dev": "sirv public --single --dev",
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=6",
+    "yarn": ">=1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "svelte"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect",
+      "@testing-library/svelte/cleanup-after-each"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.svelte$": "svelte-test/transform"
+    }
+  }
+}
