@@ -1,4 +1,4 @@
-import { render, fireEvent, wait } from '@testing-library/svelte'
+import { render, fireEvent, waitFor } from '@testing-library/svelte'
 import Exercise from '../solutions/01-a-formal-greeting.svelte'
 // import Exercise from '../exercises/01-a-formal-greeting.svelte'
 
@@ -13,7 +13,7 @@ test('changing the name updates the greeting', async () => {
 
   fireEvent.input(input, { target: { value: 'Bob' } })
 
-  await wait(() => {
+  await waitFor(() => {
     expect(getByTestId('greeting')).toHaveTextContent('Hello, Bob!')
   })
 })
@@ -24,7 +24,7 @@ test('name defaults to "unknown" when input is empty', async () => {
 
   fireEvent.input(input, { target: { value: '' } })
 
-  await wait(() => {
+  await waitFor(() => {
     expect(getByTestId('greeting')).toHaveTextContent('Hello, unknown!')
   })
 })

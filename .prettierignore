@@ -1,3 +1,5 @@
+.*ignore
+*.png
 src/exercise-list.js
 public/*.js
 public/assets
